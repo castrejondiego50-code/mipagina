@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI WEB - Juan Diego Juarez</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="miweb.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h1>JUAN DIEGO <span>JUAREZ</span></h1>
+    </nav>
+
+    <main class="padre">
+        <div class="hijo"> 
+            <div class="nieto">
+                <div class="tech-badge">Java</div>
+                <h2>Desarrollo en NetBeans</h2>
+                <img src="galeria/java.png" alt="Java">
+                <p>IDE robusto para la gestión de proyectos empresariales, depuración avanzada y diseño de interfaces gráficas mediante GUI Builder.</p>
+            </div>
+
+            <div class="nieto">
+                <div class="tech-badge">Python</div>
+                <h2>Inteligencia Artificial</h2>
+                <img src="galeria/python.webp" alt="Python">
+                <p>Lenguaje multiparadigma optimizado para ciencia de datos, automatización y scripts de alto rendimiento.</p>
+            </div>
+
+            <div class="nieto">
+                <div class="tech-badge">MySQL</div>
+                <h2>Gestión de Datos</h2>
+                <img src="galeria/logo de mysql.jpg" alt="MySQL">
+                <p>Administración de bases de datos relacionales con SQL para garantizar la integridad y escalabilidad de la información.</p>
+            </div>
+        </div> 
+    </main>
+<section class="seccion-album">
+    <h2>Mi Álbum de Viajes</h2>
+    
+<section class="seccion-album">
+    <h2>Mi Álbum de Viajes</h2>
+    
+    <div class="slider-wrapper"> <div class="slider-container"> <img src="fotos/foto1.jpg" class="activo" alt="Foto 1">
+            <img src="fotos/foto2.jpg" alt="Foto 2">
+            <img src="fotos/foto3.jpg" alt="Foto 3">
+            <img src="fotos/foto4.jpg" alt="Foto 4">
+            <img src="fotos/foto5.jpg" alt="Foto 5">
+            <img src="fotos/foto6.jpg" alt="Foto 6">
+            <img src="fotos/foto7.jpg" alt="Foto 7">
+            <img src="fotos/foto8.jpg" alt="Foto 8">
+            <img src="fotos/foto9.jpg" alt="Foto 9">
+            <img src="fotos/foto10.jpg" alt="Foto 10">
+        </div>
+    </div>
+
+    <div class="indicadores" id="contenedor-puntos"></div>
+</section>
+
+    <section class="social-section">
+        <h3>¿Hablamos de tecnología?</h3>
+        <div class="social-links">
+            <a href="https://wa.me/519XXXXXXXX" target="_blank" class="icon-box whatsapp" title="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://instagram.com/tu_usuario" target="_blank" class="icon-box instagram" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://facebook.com/tu_usuario" target="_blank" class="icon-box facebook" title="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://github.com/tu_usuario" target="_blank" class="icon-box github" title="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Juan Diego Juarez Castrejon &copy; 2026 | Ingeniería de Software con IA</p>
+    </footer>
+
+    <script>
+        const imagenes = document.querySelectorAll(".slider-container img");
+        const contenedorPuntos = document.getElementById("contenedor-puntos");
+        let indice = 0;
+
+        imagenes.forEach((_, i) => {
+            const punto = document.createElement("div");
+            punto.classList.add("punto");
+            if (i === 0) punto.classList.add("activo");
+            contenedorPuntos.appendChild(punto);
+        });
+
+        const puntos = document.querySelectorAll(".punto");
+
+        function cambiarImagen() {
+            imagenes[indice].classList.remove("activo");
+            puntos[indice].classList.remove("activo");
+            indice = (indice + 1) % imagenes.length;
+            imagenes[indice].classList.add("activo");
+            puntos[indice].classList.add("activo");
+        }
+        setInterval(cambiarImagen, 4000);
+    </script>
+</body>
+</html>

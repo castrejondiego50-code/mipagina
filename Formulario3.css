@@ -1,0 +1,140 @@
+/* PROYECTO: ELECCIONES 2026 - BUSINESS PRO EDITION
+   CONCEPT: NEU-MINIMALISM & HIGH DENSITY
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --brand-blue: #0052cc;      /* Azul corporativo profundo */
+    --brand-hover: #0747a6;
+    --surface: #f3f8e9;
+    --bg-app: #749ae7;
+    --border: #dfe1e6;
+    --text-high: #172b4d;       /* Contraste WCAG alto */
+    --text-low: #5e6c84;
+}
+
+body {
+    background-color: var(--bg-app);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--text-high);
+}
+
+.contenedor {
+    background-color: var(--surface);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(9, 30, 66, 0.08); /* Sombra suave profesional */
+    width: 100%;
+    max-width: 460px;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Indicador de estado superior más sutil */
+.contenedor::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--brand-blue);
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-high);
+    margin: 0 0 24px 0;
+    letter-spacing: -0.02em;
+}
+
+/* Labels como metadatos profesionales */
+label[for] {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--text-low);
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Campos de entrada optimizados para lectura */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+    background-color: #fafbfc;
+    color: var(--text-high);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--brand-blue);
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.1);
+}
+
+/* --- SECCIÓN DE CHIPS / PASTILLAS --- */
+
+/* Estilo de selección tipo "Chip" moderno */
+label:not([for]) {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    cursor: pointer;
+    background: #ebecf0;
+    padding: 6px 14px;
+    border-radius: 6px; /* Menos circular = más profesional */
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+label:not([for]):hover {
+    background: #dfe1e6;
+    color: var(--brand-blue);
+}
+
+/* Simulación de estado activo (puedes aplicarlo con JS o checked) */
+label:not([for]):active {
+    background: rgba(0, 82, 204, 0.1);
+    border-color: var(--brand-blue);
+}
+
+/* Botón de acción principal */
+button {
+    width: 100%;
+    background-color: var(--brand-blue);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: var(--brand-hover);
+}
+
+/* Optimización para espaciado en grupos */
+.field-group {
+    margin-bottom: 18px;
+}

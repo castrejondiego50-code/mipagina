@@ -1,0 +1,148 @@
+/* PROYECTO: ELECCIONES 2026 - VIBE CHECK EDITION
+   ESTILO: ULTRA-DYNAMIC & JUVENIL (MODERNO)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+:root {
+    --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --neon-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+    --text-dark: #1a1a2e;
+}
+
+/* Animación de entrada para todo el contenedor */
+@keyframes floatIn {
+    from { opacity: 0; transform: translateY(30px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+body {
+    background: var(--bg-gradient);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.contenedor {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px); /* Efecto cristal */
+    padding: 40px;
+    border-radius: 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 450px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    animation: floatIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+/* Título con fuente "Syne" para ese look juvenil y audaz */
+h2 {
+    font-family: 'Syne', sans-serif;
+    text-align: center;
+    font-size: 2.2rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+}
+
+.grupo {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    padding-left: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+input[type="text"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid transparent;
+    border-radius: 18px;
+    background: white;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.02);
+}
+
+/* Efecto Neón al hacer foco */
+input:focus, select:focus {
+    outline: none;
+    background: white;
+    border-color: #667eea;
+    box-shadow: var(--neon-shadow);
+    transform: scale(1.02); /* El campo crece ligeramente */
+}
+
+/* Select múltiple estilizado como tarjetas */
+select[multiple] {
+    height: 120px;
+    cursor: pointer;
+}
+
+/* Botón "Bouncy" Ultra Dinámico */
+button {
+    width: 100%;
+    background: var(--accent-gradient);
+    color: white;
+    padding: 18px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+button:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.6);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Decoración dinámica (Burbujas de fondo) */
+.contenedor::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 60px;
+    height: 60px;
+    background: var(--accent-gradient);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(10px);
+    opacity: 0.5;
+}
+
+/* Adaptabilidad móvil */
+@media (max-width: 480px) {
+    .contenedor {
+        padding: 25px;
+        border-radius: 24px;
+    }
+    h2 { font-size: 1.8rem; }
+}

@@ -1,0 +1,144 @@
+:root {
+    --bg-dark: #0b0e14;
+    --card-dark: #161b22;
+    --accent-blue: #58a6ff;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    padding: 20px;
+    text-align: center;
+    background: rgba(11, 14, 20, 0.8);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #30363d;
+}
+
+.navbar h1 span { color: var(--accent-blue); }
+
+/* Tarjetas de Tecnologías */
+.padre { padding: 40px 20px; max-width: 1200px; margin: auto; }
+.hijo { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+
+.nieto {
+    background: var(--card-dark);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #30363d;
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.nieto:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 10px 30px rgba(88, 166, 255, 0.1);
+}
+
+.tech-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(88, 166, 255, 0.1);
+    color: var(--accent-blue);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+
+.nieto img { width: 80px; height: 80px; object-fit: contain; margin-bottom: 20px; }
+
+/* Álbum */
+.seccion-album { background: #0d1117; padding: 60px 20px; text-align: center; }
+.slider-container {
+    max-width: 800px;
+    height: 450px;
+    margin: 20px auto;
+    border-radius: 25px;
+    border: 1px solid #30363d;
+}
+
+/* REDES SOCIALES (Espaciado y Estilo) */
+.social-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: var(--bg-dark);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* ESPACIO ENTRE ICONOS */
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background: #21262d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid #30363d;
+}
+
+.icon-box:hover {
+    transform: scale(1.2) rotate(8deg);
+    color: white;
+}
+
+/* Colores Dinámicos */
+.whatsapp:hover { background: #25d366; box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); }
+.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.facebook:hover { background: #1877f2; }
+.github:hover { background: #6e5494; }
+
+footer { padding: 30px; border-top: 1px solid #30363d; text-align: center; color: var(--text-secondary); }
+
+/* 1. Contenedor principal: define el tamaño de la "ventana" donde se verá la foto */
+.slider-container {
+    position: relative; /* Obligatorio para que las fotos no se escapen */
+    width: 100%;
+    max-width: 650px;   /* Ancho máximo de la foto */
+    height: 400px;      /* Alto fijo para evitar que las fotos se encimen hacia abajo */
+    margin: 0 auto;
+    overflow: hidden;   /* Esconde cualquier desborde */
+    border-radius: 20px;
+    background-color: #000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* 2. Las fotos: aquí es donde las "encimamos" todas en el mismo sitio */
+.slider-container img {
+    position: absolute; /* Saca las fotos del flujo normal y las apila una sobre otra */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Corta la foto para que llene el cuadro sin deformarse */
+    opacity: 0;         /* Todas invisibles */
+    transition: opacity 0.8s ease-in-out; /* Cambio suave */
+}
+
+/* 3. La clase activo: solo la foto con esta clase será visible */
+.slider-container img.activo {
+    opacity: 1;
+    z-index: 5;         /* La pone al frente de las demás */
+}

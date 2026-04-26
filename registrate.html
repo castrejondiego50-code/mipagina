@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrate</title>
+    <link rel="stylesheet" href="registrate.css">
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>registro</h2>
+        
+        <form action="https://formsubmit.co/juandiegojuaresraul@gmail.com" method="POST">
+            
+            <div class="grupo">
+                <label for="nombres">NOMBRES Y APELLIDOS</label>
+                <input type="text" id="nombres" name="Nombre" placeholder="Escribe tu nombre completo" required>
+            </div>
+
+            <div class="grupo" style="display: flex; gap: 15px;">
+                <div style="flex: 1;">
+                    <label for="edad">EDAD</label>
+                    <input type="tel" id="edad" name="Edad" placeholder="Ej. 25" maxlength="2">
+                </div>
+                <div style="flex: 2;">
+                    <label for="interes">INTERÉS</label>
+                    <select id="interes" name="Interes">
+                        <option value="Candidato">Candidato Presidencial</option>
+                        <option value="Diputados">Diputados</option>
+                        <option value="Senadores">Senadores</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grupo">
+                <label for="contacto">NÚMERO DE CONTACTO</label>
+                <input type="tel" id="contacto" name="Telefono" placeholder="+51 950002455">
+            </div>
+
+            <div class="grupo">
+                <label for="email">GMAIL / CORREO ELECTRÓNICO</label>
+                <input type="text" id="email" name="Email" placeholder="usuario@gmail.com" required>
+            </div>
+
+            <button type="submit">REALIZAR CONSULTA</button>
+            
+            <small>Tus datos están protegidos por la ley de transparencia.</small>
+        </form>
+    </div>
+
+</body>
+</html>
